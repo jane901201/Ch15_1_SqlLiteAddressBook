@@ -8,10 +8,7 @@ import android.widget.*
 
 class UpdateActivity : AppCompatActivity() {
 
-    private var items: ArrayList<String> = ArrayList()
-    private lateinit var adapter: ArrayAdapter<String>
     private lateinit var dbrw: SQLiteDatabase
-    private lateinit var toastQueryString: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
