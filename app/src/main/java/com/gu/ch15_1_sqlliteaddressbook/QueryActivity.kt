@@ -53,9 +53,9 @@ class QueryActivity : AppCompatActivity() {
             } else {
                 //輸入編號，依編號查詢
                 if (ed_number_query.length() > 0) {
-                    toastQueryString="select * from myTable where id='${ed_number_query.text}'"
+                    toastQueryString="select * from myTable where number= '${ed_number_query.text}'"
                     showToast("queryString:\n${toastQueryString}")
-                    //getSQLData()
+                    getSQLData()
 
                 } else {
                     //依3欄位組合查詢
