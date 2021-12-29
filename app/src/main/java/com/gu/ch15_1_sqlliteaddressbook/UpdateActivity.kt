@@ -20,11 +20,6 @@ class UpdateActivity : AppCompatActivity() {
 
         //取得資料庫實體
         dbrw = MyDBHelper(this).writableDatabase
-        //宣告 Adapter 並連結 ListView
-        adapter = ArrayAdapter(this,
-            android.R.layout.simple_list_item_1, items)
-        findViewById<ListView>(R.id.result_list).adapter = adapter
-
 
         setListener()
 
@@ -47,7 +42,7 @@ class UpdateActivity : AppCompatActivity() {
                 try {
                     dbrw.execSQL("UPDATE myTable SET name = ${ed_name.text} WHERE number LIKE '${ed_number.text}'")
                     showToast("更新:${ed_number.text},名字:${ed_name.text}")
-                    cleanEditText()
+                    //cleanEditText()
                 } catch (e: Exception) {
                     showToast("更新失敗:$e")
                 }
@@ -56,7 +51,7 @@ class UpdateActivity : AppCompatActivity() {
                 try {
                     dbrw.execSQL("UPDATE myTable SET phone = ${ed_phone.text} WHERE number LIKE '${ed_number.text}'")
                     showToast("更新:${ed_number.text},名字:${ed_name.text}")
-                    cleanEditText()
+                    //cleanEditText()
                 } catch (e: Exception) {
                     showToast("更新失敗:$e")
                 }
@@ -65,11 +60,13 @@ class UpdateActivity : AppCompatActivity() {
                 try {
                     dbrw.execSQL("UPDATE myTable SET address = ${ed_address.text} WHERE number LIKE '${ed_number.text}'")
                     showToast("更新:${ed_number.text},名字:${ed_name.text}")
-                    cleanEditText()
+                    //cleanEditText()
                 } catch (e: Exception) {
                     showToast("更新失敗:$e")
                 }
             }
+
+            cleanEditText()
         }
 
         findViewById<Button>(R.id.updateRetunrHomeButton).setOnClickListener {
